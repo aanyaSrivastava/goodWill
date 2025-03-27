@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { PeopleInNeed } from './PeopleInNeed';
 import { usePoints } from '../contexts/PointsContext';
@@ -19,6 +18,7 @@ interface DonorData {
   availability: Date | undefined;
   address: string;
   recentlyDonated: string;
+  weight: string;
 }
 
 export const BloodDonationForm = () => {
@@ -34,43 +34,9 @@ export const BloodDonationForm = () => {
     bloodGroup: 'A+',
     availability: undefined,
     address: '',
-    recentlyDonated: 'no'
+    recentlyDonated: 'no',
+    weight: '',
   });
-
-  // Get current location
-  const getCurrentLocation = () => {
-    setLoading(true);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation(`${latitude}, ${longitude}`);
-          setFormData(prev => ({ ...prev, address: `${latitude}, ${longitude}` }));
-          setLoading(false);
-          toast({
-            title: "Location detected",
-            description: "Your current location has been saved.",
-          });
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          setLoading(false);
-          toast({
-            title: "Location error",
-            description: "Unable to get your location. Please enter manually.",
-            variant: "destructive",
-          });
-        }
-      );
-    } else {
-      setLoading(false);
-      toast({
-        title: "Geolocation not supported",
-        description: "Your browser doesn't support geolocation. Please enter address manually.",
-        variant: "destructive",
-      });
-    }
-  };
 
   useEffect(() => {
     if (date) {
@@ -88,6 +54,8 @@ export const BloodDonationForm = () => {
     
     // Validation
     const age = parseInt(formData.age);
+    const weight = parseInt(formData.weight);
+
     if (age < 16 || age > 65) {
       toast({
         title: "Age restriction",
@@ -96,7 +64,16 @@ export const BloodDonationForm = () => {
       });
       return;
     }
-    
+
+    if (weight < 50) {
+      toast({
+        title: "Weight restriction",
+        description: "Donors must weigh at least 50 kg.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     if (formData.recentlyDonated === 'yes') {
       toast({
         title: "Recent donation",
@@ -105,7 +82,7 @@ export const BloodDonationForm = () => {
       });
       return;
     }
-    
+
     if (!formData.availability) {
       toast({
         title: "Availability required",
@@ -125,7 +102,7 @@ export const BloodDonationForm = () => {
       description: "Your information has been saved. You may be contacted when someone needs your blood type.",
       variant: "default",
     });
-    
+
     setIsSubmitted(true);
   };
 
@@ -157,7 +134,7 @@ export const BloodDonationForm = () => {
               placeholder="Your full name"
             />
           </div>
-          
+
           <div className="space-y-2">
             <label htmlFor="age" className="block text-sm font-medium">
               Age
@@ -172,9 +149,25 @@ export const BloodDonationForm = () => {
               className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blood focus:border-transparent outline-none transition-all"
               placeholder="Must be 16-65"
             />
-            <p className="text-xs text-muted-foreground">Must be between 16 and 65 years old</p>
           </div>
-          
+
+          <div className="space-y-2">
+            <label htmlFor="weight" className="block text-sm font-medium">
+              Weight (kg)
+            </label>
+            <input
+              id="weight"
+              name="weight"
+              type="number"
+              required
+              value={formData.weight}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blood focus:border-transparent outline-none transition-all"
+              placeholder="Must be at least 50 kg"
+            />
+            <p className="text-xs text-muted-foreground">Must be at least 50 kg</p>
+          </div>
+
           <div className="space-y-2">
             <label htmlFor="gender" className="block text-sm font-medium">
               Gender
@@ -192,7 +185,7 @@ export const BloodDonationForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          
+
           <div className="space-y-2">
             <label htmlFor="phone" className="block text-sm font-medium">
               Phone Number
@@ -208,30 +201,7 @@ export const BloodDonationForm = () => {
               placeholder="We'll contact you here"
             />
           </div>
-          
-          <div className="space-y-2">
-            <label htmlFor="bloodGroup" className="block text-sm font-medium">
-              Blood Group
-            </label>
-            <select
-              id="bloodGroup"
-              name="bloodGroup"
-              required
-              value={formData.bloodGroup}
-              onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blood focus:border-transparent outline-none transition-all"
-            >
-              <option value="A+">A+</option>
-              <option value="A-">A-</option>
-              <option value="B+">B+</option>
-              <option value="B-">B-</option>
-              <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
-              <option value="O+">O+</option>
-              <option value="O-">O-</option>
-            </select>
-          </div>
-          
+
           <div className="space-y-2">
             <label htmlFor="recentlyDonated" className="block text-sm font-medium">
               Donated Blood Within Last 2 Months?
@@ -248,66 +218,8 @@ export const BloodDonationForm = () => {
               <option value="yes">Yes</option>
             </select>
           </div>
-          
-          <div className="space-y-2">
-            <label htmlFor="availability" className="block text-sm font-medium">
-              Availability (Date)
-            </label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={cn(
-                    "w-full px-4 py-2 rounded-lg border justify-start text-left font-normal",
-                    !date && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "PPP") : <span>Select your availability</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
-                  initialFocus
-                  disabled={(date) => date < new Date()}
-                  className={cn("p-3 pointer-events-auto")}
-                />
-              </PopoverContent>
-            </Popover>
-          </div>
-          
-          <div className="space-y-2 md:col-span-2">
-            <label htmlFor="address" className="block text-sm font-medium">
-              Address
-            </label>
-            <div className="flex space-x-2">
-              <input
-                id="address"
-                name="address"
-                type="text"
-                required
-                value={formData.address}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blood focus:border-transparent outline-none transition-all"
-                placeholder="Your current location"
-              />
-              <Button 
-                type="button" 
-                onClick={getCurrentLocation} 
-                variant="outline"
-                className="px-3 py-2 bg-blood/20 hover:bg-blood/30 text-blood rounded-lg flex items-center justify-center transition-colors"
-                disabled={loading}
-              >
-                <MapPin className="h-4 w-4 mr-2" />
-                {loading ? "Detecting..." : "Get Location"}
-              </Button>
-            </div>
-          </div>
         </div>
-        
+
         <div className="pt-4">
           <button
             type="submit"
