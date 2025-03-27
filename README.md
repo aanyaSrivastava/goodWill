@@ -1,7 +1,7 @@
 # GoodWill
 
 ## Overview
-goodWill is a mobile application designed to connect blood donors and recipients in real time, ensuring timely access to life-saving blood and rare medications, particularly in rural areas.
+GoodWill is a mobile application designed to connect blood donors and recipients in real time, ensuring timely access to life-saving blood and rare medications, particularly in rural areas.
 
 ## Features
 - **Real-Time Blood Request Matching**
@@ -13,7 +13,7 @@ goodWill is a mobile application designed to connect blood donors and recipients
 
 ## Tech Stack
 - **Frontend**: React Native (cross-platform compatibility)
-- **Backend**: Firebase (Realtime Database, Cloud Messaging, Authentication)
+- Backend : NodeExpress ;
 - **APIs & Services**:
   - OpenStreetMap API (location-based services)
 
@@ -43,6 +43,5 @@ npm start
 3. Commit changes (`git commit -m "Added new feature"`)
 4. Push to branch (`git push origin feature-branch`)
 5. Open a pull request
-
 
 
