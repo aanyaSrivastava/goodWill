@@ -1,7 +1,7 @@
 # GoodWill
 
 ## Overview
-GoodWill is a mobile application designed to connect blood donors and recipients in real time, ensuring timely access to life-saving blood and rare medications, particularly in rural areas.
+goodWill is a mobile application designed to connect blood donors and recipients in real time, ensuring timely access to life-saving blood and rare medications, particularly in rural areas.
 
 ## Features
 - **Real-Time Blood Request Matching**
