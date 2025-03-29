@@ -12,12 +12,9 @@ GoodWill is a mobile application designed to connect blood donors and recipients
 - **Incentivized Blood Donation System**
 
 ## Tech Stack
-- **Frontend**: React Native (cross-platform compatibility)
-- Backend : NodeExpress ;
-- **APIs & Services**:
-  - OpenStreetMap API (location-based services)
-
-  - Firebase Cloud Messaging (instant notifications)
+- **Frontend**: React.js
+- Backend : Node.js and Express.js
+- Database : MongoDB
 
 ## Usage
 1. **Patients**: Register/Login → Enter blood type & urgency → Search for donors → Request blood → Receive confirmation.
