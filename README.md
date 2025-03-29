@@ -13,8 +13,8 @@ goodWill is a web application designed to connect blood donors and recipients in
 
 ## Tech Stack
 - **Frontend**: React.js
-- Backend : Node.js and Express.js
-- Database : MongoDB
+- **Backend** : Node.js and Express.js
+- **Database** : MongoDB
 
 ## Usage
 1. **Patients**: Register/Login → Enter blood type & urgency → Search for donors → Request blood → Receive confirmation.
@@ -31,7 +31,7 @@ cd goodwill
 npm install
 
 # Run the application
-npm start
+npm run dev
 ```
 
 ## Contribution
