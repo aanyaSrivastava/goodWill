@@ -130,4 +130,6 @@ Participating in the IEEE Project of the Month program, we gained hands-on exper
 
 Pull requests are welcome. For major changes, please open an issue first to discuss your ideas.
 
+---
+
 Made with ❤️ by the goodWill team.
