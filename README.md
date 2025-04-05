@@ -12,10 +12,15 @@ goodWill started with a simple goal—to make finding blood donors quick and has
 - **Incentivized Blood Donation System**
 
 ## Tech Stack
-- **Frontend**: React.js
-- **Backend** : Node.js and Express.js
-- **Database** : MongoDB
+- **Frontend**:
+   React.js – Component-based library for building fast and interactive user interfaces.
 
+- **Backend**:
+   Node.js & Express.js (with TypeScript) – Scalable backend using TypeScript for type safety and Express.js for clean API design.
+
+- **Database**:
+   MongoDB – NoSQL database optimized for flexibility and handling complex, unstructured data.
+  
 ## Usage
 1. **Patients**: Register/Login → Enter blood type & urgency → Search for donors → Request blood → Receive confirmation.
 2. **Donors**: Register/Login → View blood requests → Confirm donation → Earn points.
