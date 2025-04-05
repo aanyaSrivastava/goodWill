@@ -15,7 +15,7 @@
 
 We developed goodWill with the goal of simplifying blood donation by connecting donors with hospitals in real time.
 
-## 🔍 Our Approach
+### 🔍 Our Approach
 - Identified key features: viewing hospital blood availability, sorting by blood type need, and updating inventory post-donation.
 
 - Chose the MERN stack for rapid full-stack development.
@@ -24,7 +24,7 @@ We developed goodWill with the goal of simplifying blood donation by connecting 
 
 - Created a backend with Express.js and MongoDB including RESTful APIs.
 
-## 🧠 Challenges & Solutions
+### 🧠 Challenges & Solutions
 - State management issues: Resolved with proper component structuring and prop handling.
 
   API errors: Fixed via Express middleware and response validation.
