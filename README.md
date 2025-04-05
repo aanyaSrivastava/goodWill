@@ -9,7 +9,27 @@
 - Donate blood and update hospital records
 - Sort hospitals by blood type availability
 - Seed and populate hospital data for testing and development
-- Fast and responsive UI 
+- Fast and responsive UI
+
+## 🏗️ How We Built It
+
+We developed goodWill as part of the IEEE Project of the Month with the goal of simplifying blood donation by connecting donors with hospitals in real time.
+
+## 🔍 Our Approach
+- Identified key features: viewing hospital blood availability, sorting by blood type need, and updating inventory post-donation.
+
+- Chose the MERN stack for rapid full-stack development.
+
+- Designed a clean, responsive UI using React + TypeScript + Tailwind CSS.
+
+- Created a backend with Express.js and MongoDB including RESTful APIs.
+
+## 🧠 Challenges & Solutions
+- State management issues: Resolved with proper component structuring and prop handling.
+
+  API errors: Fixed via Express middleware and response validation.
+
+- Database schema complexity: Refined our Mongoose models for clarity and flexibility.
 
 ## 🛠️ Tech Stack
 
@@ -104,7 +124,7 @@ This creates mock hospital records with varying blood inventories.
 
 ## 🧠 What We Learned
 
-Participating in the IEEE Project of the Month program, we gained hands-on experience with full-stack web development using the MERN stack. We improved our skills in building REST APIs, designing intuitive user interfaces with Tailwind CSS, and managing real-time data using MongoDB. We also learned how to work effectively as a team using Git and GitHub, follow agile development practices, and apply clean code principles throughout the project.
+Participating in the IEEE Project of the Month program, we gained hands-on experience with full-stack web development using the MERN stack. We improved our skills in building REST APIs, designing intuitive user interfaces, and managing real-time data using MongoDB. We also learned how to work effectively as a team using Git and GitHub, and apply clean code principles throughout the project.
 
 ## 👨‍💻 Contributing
 
