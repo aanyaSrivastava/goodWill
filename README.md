@@ -13,7 +13,7 @@
 
 ## 🏗️ How We Built It
 
-We developed goodWill as part of the IEEE Project of the Month with the goal of simplifying blood donation by connecting donors with hospitals in real time.
+We developed goodWill with the goal of simplifying blood donation by connecting donors with hospitals in real time.
 
 ## 🔍 Our Approach
 - Identified key features: viewing hospital blood availability, sorting by blood type need, and updating inventory post-donation.
