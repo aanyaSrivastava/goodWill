@@ -11,7 +11,7 @@
 - Seed and populate hospital data for testing and development
 - Fast and responsive UI
 
-## 🏗️ How We Built The Project
+## 🏗️ How We Built It
 
 We developed goodWill with the goal of simplifying blood donation by connecting donors with hospitals in real time.
 
