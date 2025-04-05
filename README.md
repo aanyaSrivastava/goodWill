@@ -26,7 +26,7 @@
 ## 📁 Project Structure
 
 ```
-GOODWILLFINAL12-main/
+goodWill-main/
 │
 ├── src/                  # Frontend React source files
 ├── init/                 # Express backend with models, routes, and seeders
@@ -102,11 +102,8 @@ node seed-hospital.js
 
 This creates mock hospital records with varying blood inventories.
 
-## Contribution
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Commit changes (`git commit -m "Added new feature"`)
-4. Push to branch (`git push origin feature-branch`)
-5. Open a pull request
+## 👨‍💻 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss your ideas.
 
 
