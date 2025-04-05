@@ -12,11 +12,6 @@ goodWill started with a simple goal—to make finding blood donors quick and has
 
 - **Database**:
    MongoDB – NoSQL database optimized for flexibility and handling complex, unstructured data.
-  
-## Usage
-1. **Patients**: Register/Login → Enter blood type & urgency → Search for donors → Request blood → Receive confirmation.
-2. **Donors**: Register/Login → View blood requests → Confirm donation → Earn points.
-3. **Blood Banks/Hospitals**: Register/Login → Update blood stock → Respond to patient requests.
 
 ## Installation
 ```bash
