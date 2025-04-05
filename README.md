@@ -3,14 +3,6 @@
 ## Overview
 goodWill started with a simple goal—to make finding blood donors quick and hassle-free during emergencies. Our platform connects patients in urgent need of blood with registered donors, nearby blood banks, and hospitals through a real-time, location-based search system. Patients can enter their blood type and details to find matching resources quickly. Donors register their information, view a list of patients, and choose to donate. Upon donation, they receive confirmation and earn 15 reward points. Once they accumulate 100 points, they unlock perks like free health check-ups, encouraging regular participation. The solution creates an efficient, secure, and incentivized ecosystem that bridges the gap between donors and those in need, ensuring faster and more reliable access to life-saving blood.
 
-## Features
-- **Real-Time Blood Request Matching**
-- **Geolocation Services** (OpenStreetMap API for proximity-based search)
-
-- **Secure Authentication**
-
-- **Incentivized Blood Donation System**
-
 ## Tech Stack
 - **Frontend**:
    React.js – Component-based library for building fast and interactive user interfaces.
