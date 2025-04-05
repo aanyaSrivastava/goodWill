@@ -102,12 +102,12 @@ node seed-hospital.js
 
 This creates mock hospital records with varying blood inventories.
 
-## 👨‍💻 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss your ideas.
-
 ## 🧠 What We Learned
 
 Participating in the IEEE Project of the Month program, we gained hands-on experience with full-stack web development using the MERN stack. We improved our skills in building REST APIs, designing intuitive user interfaces with Tailwind CSS, and managing real-time data using MongoDB. We also learned how to work effectively as a team using Git and GitHub, follow agile development practices, and apply clean code principles throughout the project.
+
+## 👨‍💻 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss your ideas.
 
 
